@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="App">
       <div>안녕하세요! {name}님!</div>
-      <input onChange={(e)=>{ setEntry(e.target.value)
+      <p/><input onChange={(e)=>{ setEntry(e.target.value)
         }}/><button onClick={(e)=>{setName(entry)}}>확인</button>
         {/* <Hello name={name}/> */}
         <Commu name={name}/>
