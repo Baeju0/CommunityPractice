@@ -11,6 +11,7 @@ function Commu(props) {
     return(
         <div>
             <h1>Hi! {props.name}</h1>
+        <hr/>
             <h2>Nice to meet you!</h2>
             What are we going to do Today?
             <p><input onChange={(e)=>{setInput2(e.target.value)
