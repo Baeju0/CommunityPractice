@@ -44,16 +44,28 @@ function Write() {
       index : 처리할 현재 요소의 인덱스(0부터 시작)
       map()으로 호출한 배열 */}
 
+
+      {/* map함수 중첩으로 어떻게? */}
         {mock.map(function (mock, i) {
         return (
           <div className='mock' key={i}>
             <h3>제목 : {mock}</h3>
-            <h3>내용 : {young}</h3>
+            <h3>내용 : {young[i]}</h3> {/*map함수 처리할 요소 말고 다른 요소에는[i] 붙임*/}
             <hr/>
           </div>
         );
       })
       }
+
+        {/* {young.map(function (young, i) {
+          return (
+            <div className="young" key={i}>
+              <h3>내용 : {young} </h3>
+            </div>
+          )
+        })}
+
+      <hr/> */}
 
         {/* 저장 만들기 */}
     </div>
