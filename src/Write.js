@@ -4,6 +4,20 @@ import { useHistory } from "react-router-dom";
 function Write() {
     let history = useHistory();
 
+    //현재 날짜, 요일, 시간
+    function today() {
+      let now = new Date();
+      let year = now.getFullYear();
+      let month = now.getMonth() + 1;
+      let date = now.getDate();
+      const week = ['일','월','화','수','목','금','토'];
+      let nowWeek = week[now.getDay()];
+      let hours = now.getHours();
+      let minutes = now.getMinutes();
+
+      return year + '.' + month + '.' + date + ' '+ nowWeek + '요일 ' + hours + ':' + minutes;
+    }
+
     // let [list, setList] = useState(['']);
 
     let [je, setJe] = useState(['']);
@@ -51,6 +65,7 @@ function Write() {
           <div className='mock' key={i}>
             <h3>제목 : {mock}</h3>
             <h3>내용 : {young[i]}</h3> {/*map함수 처리할 요소 말고 다른 요소에는[i] 붙임*/}
+            {today()} {/* ※(수정하기) 기존 게시물도 리렌더링 되어서 날짜가 최신으로 업데이트 됨 */}
             <hr/>
           </div>
         );
@@ -66,8 +81,8 @@ function Write() {
         })}
 
       <hr/> */}
-
         {/* 저장 만들기 */}
+        {/* ※(보류) props로 데이터 전달하려고 했더니 페이지 멈춤 */}
     </div>
     )
 }
