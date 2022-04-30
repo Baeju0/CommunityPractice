@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import Year from "react-live-clock";
+import Month from "react-live-clock";
 
 function Write() {
     let history = useHistory();
@@ -66,6 +68,7 @@ function Write() {
             <h3>제목 : {mock}</h3>
             <h3>내용 : {young[i]}</h3> {/*map함수 처리할 요소 말고 다른 요소에는[i] 붙임*/}
             {today()} {/* ※(수정하기) 기존 게시물도 리렌더링 되어서 날짜가 최신으로 업데이트 됨 */}
+            <Year id="Year" format={"YYYY"} ticking={false} timezone={"KR/Pacific"}/>
             <hr/>
           </div>
         );
