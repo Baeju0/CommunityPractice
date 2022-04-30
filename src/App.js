@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import React from 'react';
 import Commu from './Commu';
 import Write from './Write';
 import { useState } from 'react';

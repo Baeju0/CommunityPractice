@@ -1,24 +1,28 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+
+// react-live-clock 라이브러리(getDay대신)
 import Year from "react-live-clock";
-import Month from "react-live-clock";
+import Day from "react-live-clock";
+import Time from "react-live-clock";
 
 function Write() {
     let history = useHistory();
 
     //현재 날짜, 요일, 시간
-    function today() {
-      let now = new Date();
-      let year = now.getFullYear();
-      let month = now.getMonth() + 1;
-      let date = now.getDate();
-      const week = ['일','월','화','수','목','금','토'];
-      let nowWeek = week[now.getDay()];
-      let hours = now.getHours();
-      let minutes = now.getMinutes();
+    // js로 표시
+    // function today() {
+    //   let now = new Date();
+    //   let year = now.getFullYear();
+    //   let month = now.getMonth() + 1;
+    //   let date = now.getDate();
+    //   const week = ['일','월','화','수','목','금','토'];
+    //   let nowWeek = week[now.getDay()];
+    //   let hours = now.getHours();
+    //   let minutes = now.getMinutes();
 
-      return year + '.' + month + '.' + date + ' '+ nowWeek + '요일 ' + hours + ':' + minutes;
-    }
+    //   return year + '.' + month + '.' + date + ' '+ nowWeek + '요일 ' + hours + ':' + minutes;
+    // }
 
     // let [list, setList] = useState(['']);
 
@@ -67,8 +71,12 @@ function Write() {
           <div className='mock' key={i}>
             <h3>제목 : {mock}</h3>
             <h3>내용 : {young[i]}</h3> {/*map함수 처리할 요소 말고 다른 요소에는[i] 붙임*/}
-            {today()} {/* ※(수정하기) 기존 게시물도 리렌더링 되어서 날짜가 최신으로 업데이트 됨 */}
-            <Year id="Year" format={"YYYY"} ticking={false} timezone={"KR/Pacific"}/>
+            {/* {today()}  */}
+            {/* ※(수정하기) 기존 게시물도 리렌더링 되어서 날짜가 최신으로 업데이트 됨 */}
+            
+            <Year id="Year" format={"YYYY."} ticking={false} timezone={"KR/Pacific"}/>
+            <Day format={"MM.DD "} ticking={false} timezone={"KR/Pacific"}/>
+            <Time format={"ahh:mm"} ticking={false} timezone={"KR/Pacific"}/>
             <hr/>
           </div>
         );
